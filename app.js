@@ -17,11 +17,11 @@ const stopwatch = () => {
       hours++;
     }
   }
-  let h = hours < 10 ? `0${hours}`: hours
-  let m = mins < 10 ? `0${mins}`: mins
-  let s = secs < 10 ? `0${secs}`: secs
+  let h = hours < 10 ? `0${hours}` : hours;
+  let m = mins < 10 ? `0${mins}` : mins;
+  let s = secs < 10 ? `0${secs}` : secs;
 
-  Time.innerHTML = `${hours}:${mins}:${s}`;
+  Time.innerHTML = `${h}:${m}:${s}`;
 };
 
 //function to start watch every 1 secs
@@ -34,13 +34,14 @@ const watchStart = () => {
 
 //function to stop
 const watchStop = () => {
-    clearInterval(timer);
+  clearInterval(timer);
 };
 const watchReset = () => {
-    clearInterval(timer);
-    [secs, mins, hours] = [0, 0, 0];
-    Time.innerHTML = '00:00:00'
+  clearInterval(timer);
+  [secs, mins, hours] = [0, 0, 0];
+  Time.innerHTML = "00:00:00";
 };
 
 playBtn.addEventListener("click", watchStart);
-resetBtn.addEventListener('click', watchReset)
+resetBtn.addEventListener("click", watchReset);
+stopBtn.addEventListener("click", watchStop);
